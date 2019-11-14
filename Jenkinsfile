@@ -32,8 +32,7 @@ pipeline {
         sh """
         env
         mvn -v
-        cd CustomerOrderServicesProject
-        mvn clean package
+        mvn clean install
         """
       }
     }
