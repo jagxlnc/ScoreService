@@ -22,7 +22,7 @@
     <applicationManager autoExpand="true"/>
     <applicationMonitor updateTrigger="mbean"/>
 	
-  <application id="ScoreService" name="ScoreService-0.0.1-SNAPSHOT.war" type="war" location="ScoreService-0.0.1-SNAPSHOT.war">
+  <application id="ScoreService" name="ScoreService" type="war" location="ScoreService-0.0.1-SNAPSHOT.war">
     <classloader apiTypeVisibility="spec, ibm-api, third-party" />
   </application>
     
