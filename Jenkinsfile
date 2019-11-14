@@ -69,5 +69,26 @@ pipeline {
         }
       }
     }
+
+    stage('Promotion gate') {
+          steps {
+            script {
+              input message: 'Promote application to Staging?'
+            }
+          }
+        }
+
+    stage('Promote to Stage') {
+      steps {
+        script {
+          openshift.withCluster() {
+            openshift.withProject() {
+              openshift.tag("${env.DEV}/${env.APP_NAME}:latest", "${env.STAGE}/${env.APP_NAME}:latest")
+            }
+          }
+        }
+      }
+    }
+
   }
 }
