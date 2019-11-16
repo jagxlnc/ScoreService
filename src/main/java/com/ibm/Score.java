@@ -11,13 +11,6 @@ public class Score
 		return r.nextInt((max - min) + 1) + min;
 	}
 
-	
-	public static void main(String args[]) {
-		
-		Score s = new Score();
-		int myscore = s.getRandomNumberInRange(300, 850);
-		System.out.println(" Hello " + myscore );
-	}
 }
 
 

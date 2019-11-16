@@ -2,7 +2,6 @@ package com.ibm;
  
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -12,7 +11,7 @@ import javax.ws.rs.core.Application;
  
 @ApplicationPath("rest")
 @Path("service")
-public class InvokeService extends Application {
+public class Service extends Application {
  
 	@GET
 	@Path("getScore/")
