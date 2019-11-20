@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Template
 labels:
-  template: gse-liberty-build
+  template: liberty-build
 metadata:
-  name: gse-liberty-build
+  name: liberty-build
 objects:
 - apiVersion: v1
   kind: ImageStream
@@ -88,7 +88,7 @@ parameters:
   value: https://github.com/jagxlnc/ScoreService
 - description: Git branch/tag reference
   name: SOURCE_REF
-  value: liberty
+  value: master
 - description: WebSphere Docker Image Name -
   name: WEBSPHERE_IMAGE
   required: true

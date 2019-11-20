@@ -71,6 +71,18 @@ pipeline {
       }
     }
 
+    stage('Promote to Stage') {
+      steps {
+        script {
+          openshift.withCluster() {
+            openshift.withProject() {
+              openshift.tag("${env.DEV}/${env.APP_NAME}:latest", "${env.STAGE}/${env.APP_NAME}:latest")
+            }
+          }
+        }
+      }
+    }
+
     stage('Promotion gate') {
           steps {
             script {
@@ -79,12 +91,12 @@ pipeline {
           }
         }
 
-    stage('Promote to Stage') {
+    stage('Promote to Prod') {
       steps {
         script {
           openshift.withCluster() {
             openshift.withProject() {
-              openshift.tag("${env.DEV}/${env.APP_NAME}:latest", "${env.STAGE}/${env.APP_NAME}:latest")
+              openshift.tag("${env.STAGE}/${env.APP_NAME}:latest", "${env.PROD}/${env.APP_NAME}:latest")
             }
           }
         }
