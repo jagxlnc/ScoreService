@@ -86,7 +86,7 @@ pipeline {
     stage('Promotion gate') {
           steps {
             script {
-              input message: 'Promote application to Staging?'
+              input message: 'Promote application to Production?'
             }
           }
         }
